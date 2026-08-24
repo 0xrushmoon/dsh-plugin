@@ -1,0 +1,4 @@
+# Install overlay for `dsh plugin add`.
+- insert:
+    - id: dsh-plugin
+      name: dsh-plugin
