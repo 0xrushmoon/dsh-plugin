@@ -4,8 +4,10 @@ import { apply as applyRouting } from './routing'
 import { apply as applyMention } from './mention'
 import { apply as applyPermissions } from './permissions'
 import { apply as applySessionLog } from './session-log'
+import { apply as applyHarnessTools } from './harness-tools'
 
 export const name = 'dsh-plugin'
+export const inject = ['tools']
 
 /** Root plugin: team room, @ routing, permission deny, replayable session log. */
 export function apply(ctx: Context) {
@@ -14,5 +16,5 @@ export function apply(ctx: Context) {
   applyMention(ctx)
   applyPermissions(ctx)
   applySessionLog(ctx)
-  ctx.logger?.info?.('[dsh-plugin] loaded (rooms / routing / @ / permissions / session-log)')
+  applyHarnessTools(ctx)
 }

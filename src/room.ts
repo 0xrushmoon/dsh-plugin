@@ -28,6 +28,13 @@ export function createRoom(title: string, memberIds: string[]): Room {
   return room
 }
 
+export function joinRoom(roomId: string, memberId: string): Room {
+  const room = rooms.get(roomId)
+  if (!room) throw new Error(`unknown room ${roomId}`)
+  if (!room.memberIds.includes(memberId)) room.memberIds.push(memberId)
+  return room
+}
+
 export function getRoom(id: string): Room | undefined {
   return rooms.get(id)
 }
