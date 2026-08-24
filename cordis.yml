@@ -1,0 +1,7 @@
+# Web overlay: insert this plugin into Harness.
+# Path must be ABSOLUTE (Harness loader requirement). Replace PLUGIN_ROOT.
+# Usage from this repo: pnpm dsh web --patch ./cordis.yml
+# or: npx @deepseek-ai/dsh@0.1.1-rc.2 web --patch ./cordis.yml
+- insert:
+    - id: dsh-plugin
+      name: 'PLUGIN_ROOT/src/index.ts'
