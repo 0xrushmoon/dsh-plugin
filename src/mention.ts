@@ -3,7 +3,8 @@ import type { Turn } from './types'
 import { pickSpeakers } from './routing'
 import { appendTurn } from './session-log'
 
-const MENTION = /@([\w.-]+|[\u4e00-\u9fff][\w.-\u4e00-\u9fff]*)/g
+/** Full role name only: CJK/ASCII plus internal hyphens. e.g. @技术专家-dsh */
+const MENTION = /@([\u4e00-\u9fffA-Za-z0-9]+(?:-[\u4e00-\u9fffA-Za-z0-9]+)*)/g
 
 export function parseMentions(body: string): string[] {
   const found: string[] = []
