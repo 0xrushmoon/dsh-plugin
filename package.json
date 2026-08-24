@@ -11,7 +11,9 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "web": "dsh web --patch ./cordis.yml"
+    "web": "dsh web --patch ./cordis.patch.yml",
+    "web:local": "dsh web --patch ./cordis.yml",
+    "plugin:add": "dsh plugin --profile web add ."
   },
   "dsh": {
     "bundle": {
